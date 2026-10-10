@@ -1,0 +1,26 @@
+# Reports only the code duplication this pull request introduces: the branch is
+# scanned against its merge-base, so duplication that was already there stays
+# silent. It warns inline on the diff and never fails the build.
+#
+# Annotations are emitted as workflow commands, not through the API, so a
+# read-only token is enough and no fork guard is needed.
+name: dupdelta
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  dupdelta:
+    runs-on: ubuntu-latest
+    steps:
+      # fetch-depth: 0 is load-bearing: the merge-base has to be reachable, and
+      # the action fails loudly on a shallow clone rather than reporting every
+      # pre-existing duplicate as new.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: elecnix/dupdelta@658504a2c2fc19ced01337e2e84c79aa4699a7a7  # v0.2.0
