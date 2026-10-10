@@ -1,0 +1,13 @@
+{
+  "apps": {
+    "example-cli": {
+      "dimensions": {
+        "command": ["init", "build", "deploy"],
+        "os": ["linux", "darwin", "win32"]
+      },
+      "counts": ["runs", "failures", "durationSec"]
+    }
+  },
+  "dailyRowCap": 20000,
+  "maxBodyBytes": 8192
+}

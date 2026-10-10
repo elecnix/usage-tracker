@@ -1,0 +1,24 @@
+{
+  "name": "usage-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Anonymous daily usage counts for open-source tools: a Cloudflare Worker and D1 database you deploy to your own account, with a plain JSON HTTP API.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check": "tsc --noEmit",
+    "deploy": "node --import tsx scripts/deploy.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.0.0",
+    "better-sqlite3": "^12.4.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.149.0"
+  }
+}
