@@ -23,4 +23,4 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - uses: elecnix/dupdelta@658504a2c2fc19ced01337e2e84c79aa4699a7a7  # v0.2.0
+      - uses: elecnix/dupdelta@c95b985a8e9ba75c1473f2fe3695d8478f869d53  # v0.3.0
